@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         hostname: 'adorable-kookabura-514.convex.cloud',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'dependable-alligator-696.eu-west-1.convex.cloud',
+        port: '',
+      },
     ],
   },
 }
