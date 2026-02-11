@@ -4,9 +4,10 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { api } from '@/convex/_generated/api'
 import { fetchQuery } from 'convex/nextjs'
 import { Metadata } from 'next'
-import { cacheLife, cacheTag } from 'next/cache'
+// import { cacheLife, cacheTag } from 'next/cache'
 import Image from 'next/image'
 import Link from 'next/link'
+import { connection } from 'next/server'
 import { Suspense } from 'react'
 
 export const metadata: Metadata = {
@@ -38,9 +39,10 @@ export default function BlogPage() {
 }
 
 async function BlogList() {
-  'use cache'
-  cacheLife('hours')
-  cacheTag('blog-list')
+  // 'use cache'
+  // cacheLife('hours')
+  // cacheTag('blog-list')
+  await connection()
   const blogs = await fetchQuery(api.blogs.getBlogs)
 
   return (
